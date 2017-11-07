@@ -1,11 +1,9 @@
 const app = require('express')();
 
 var port = process.env.PORT || 8080;
+var index = require('./routes/index.js')
 
 app.set('view engine', 'ejs')
-
-app.get('/', (req, res) => {
-  res.render('home');
-})
+app.use('/', index)
 
 app.listen(port)
